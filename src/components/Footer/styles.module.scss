@@ -1,0 +1,46 @@
+.container{
+  margin-top: 20px;
+  border: 0px;
+  background-color: var(--black-20);
+}
+
+.content{
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+  }
+
+  max-width: 1440px;
+  height: 14rem;
+
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--white);
+
+  .contacts{
+    text-align: center;
+  }
+
+  .social{
+    a {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      
+      line-height: 2rem;
+    }
+  }
+}
+
+.devs{
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
