@@ -19,16 +19,6 @@ export function Footer() {
           <h3>Contato</h3>
           <p>email@email.com</p>
         </div>
-
-        <div className={styles.social}>
-          <Link href="https://www.facebook.com">
-            <a>Facebook</a>
-          </Link>
-
-          <Link href="https://www.instagram.com">
-            <a>Instagram</a>
-          </Link>
-        </div>
       </div>
       <div className={styles.devs}>
         Feito por Wellignton Carlos Massola & Vitor Hugo Nakai

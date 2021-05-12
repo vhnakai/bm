@@ -11,6 +11,16 @@ interface PostProps {
     slug: string;
     title: string;
     content: string;
+    author: string;
+    profileImage: {
+      dimensions: {
+        width: number;
+        height: number;
+      };
+      alt: string;
+      url: string;
+    };
+    description: string;
   };
 }
 
@@ -29,6 +39,11 @@ export default function Post({ post }: PostProps) {
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </article>
+          <div className={styles.author}>
+            <img src={post.profileImage.url} alt={post.profileImage.alt} />
+            <strong>{post.author}</strong>
+            <q>{post.description}</q>
+          </div>
         </main>
       </Layout>
     </>
@@ -47,12 +62,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const prismic = getPrismicClient();
 
-  const response = await prismic.getByUID("post", String(slug), {});
+  const response = await prismic.getByUID("post", String(slug), {
+    fetchLinks: ["autor.name", "autor.profile_image", "autor.descricao"],
+  });
 
   const post = {
     slug,
     title: RichText.asText(response.data.title),
     content: RichText.asHtml(response.data.content),
+    author: RichText.asText(response.data.author.data.name),
+    profileImage: response.data.author.data.profile_image,
+    description: RichText.asText(response.data.author.data.descricao),
   };
 
   return {
