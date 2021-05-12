@@ -38,12 +38,12 @@ export default function Post({ post }: PostProps) {
               className={styles.postContent}
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
+            <div className={styles.author}>
+              <img src={post.profileImage.url} alt={post.profileImage.alt} />
+              <strong>{post.author}</strong>
+              <q>{post.description}</q>
+            </div>
           </article>
-          <div className={styles.author}>
-            <img src={post.profileImage.url} alt={post.profileImage.alt} />
-            <strong>{post.author}</strong>
-            <q>{post.description}</q>
-          </div>
         </main>
       </Layout>
     </>
