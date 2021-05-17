@@ -1,23 +1,23 @@
-.container{
+.container {
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 2rem;
   min-height: 100vh;
 }
 
-.post{
+.post {
   max-width: 720px;
   margin: 5rem auto 0;
 
   .postContent {
-
     margin-top: 2rem;
     line-height: 2rem;
     font-size: 1.125rem;
 
     color: var(--black);
 
-    p, ul {
+    p,
+    ul {
       margin: 1.5rem 0;
     }
 
@@ -35,10 +35,9 @@
   }
 
   .author {
-   
     margin: 1rem auto 0;
-    padding:  2rem;
-    
+    padding: 2rem;
+
     border-radius: 5px;
 
     display: flex;
@@ -54,7 +53,7 @@
     strong {
       display: block;
       font-size: 1.5rem;
-      margin:   2rem;
+      margin: 2rem;
       text-align: center;
     }
   }
@@ -104,7 +103,7 @@
     }
   }
 
-  .nextPost {    
+  .nextPost {
     align-items: flex-end;
     text-align: end;
   }
